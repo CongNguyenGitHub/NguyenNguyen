@@ -40,3 +40,4 @@ tornado==6.2
 tzlocal==4.2
 validators==0.20.0
 wrapt==1.14.1
+openpyxl==3.0.10
