@@ -10,7 +10,7 @@ flag=False
 if data_file is not None :
     df=pd.read_excel(data_file)
     st.dataframe(df)
-    label=st.text_input("Enter your label name")
+    label=st.text_input("Enter your label's name")
     if label!="" and label not in df.columns :
         st.warning('Not find label name in data frames', icon="⚠️")
     elif label in df.columns :
@@ -39,7 +39,7 @@ if data_file is not None :
             b=tf.Variable(np.random.randn(),dtype=tf.float32)
             pred=tf.add(tf.matmul(X,W),b)
             loss=tf.compat.v1.reduce_mean (tf.square(pred-Y))
-            optimizer=tf.compat.v1.train.GradientDescentOptimizer(learning_rate= 0.1).minimize(loss)
+            optimizer=tf.compat.v1.train.GradientDescentOptimizer(learning_rate= 0.01).minimize(loss)
             init=tf.compat.v1.global_variables_initializer ()
             sess=tf.compat.v1.Session()
             sess.run(init)
