@@ -39,7 +39,7 @@ if data_file is not None :
             b=tf.Variable(np.random.randn(),dtype=tf.float32)
             pred=tf.add(tf.matmul(X,W),b)
             loss=tf.compat.v1.reduce_mean (tf.square(pred-Y))
-            optimizer=tf.compat.v1.train.GradientDescentOptimizer(learning_rate= 3e-4 ).minimize(loss)
+            optimizer=tf.compat.v1.train.GradientDescentOptimizer(learning_rate= 0.01).minimize(loss)
             init=tf.compat.v1.global_variables_initializer ()
             sess=tf.compat.v1.Session()
             sess.run(init)
@@ -53,9 +53,10 @@ if data_file is not None :
                     num=float(st.number_input("Enter value of "+x+" :"))
                     my_array=np.append(my_array,values=num)
             agree = st.checkbox("Click here to see your revenue predicted")
-            my_array=my_array.reshape(1,-1)
-            x=np.matmul(my_array,sess.run(W))
-            if agree==True :st.write("Revenue forecast results is "+str(x[0]))
+            if agree==True :
+                my_array=my_array.reshape(1,-1)
+                x=np.matmul(my_array,sess.run(W))
+                st.write("Revenue forecast results is "+str(x[0]))
 
 
 
