@@ -57,6 +57,7 @@ if data_file is not None :
                 my_array=my_array.reshape(1,-1)
                 x=np.matmul(my_array,sess.run(W))
                 st.write("Revenue forecast results is "+str(x[0]))
-
+                st.write(sess.run(W))
+                st.write(sess.run(b))
 
 
