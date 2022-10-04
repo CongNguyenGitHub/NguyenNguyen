@@ -55,9 +55,7 @@ if data_file is not None :
             agree = st.checkbox("Click here to see your revenue predicted")
             if agree==True :
                 my_array=my_array.reshape(1,-1)
-                x=np.matmul(my_array,sess.run(W))
+                x=np.matmul(my_array,sess.run(W))+sess.run(b)
                 st.write("Revenue forecast results is "+str(x[0]))
-                st.write(sess.run(W))
-                st.write(sess.run(b))
-
+                
 
