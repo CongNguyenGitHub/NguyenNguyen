@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
-st.set_page_config(page_title="CAY NHA LA VUON")
+st.set_page_config(page_title="Awesome App")
 st.header("Predict revenue based on advertising budget")
 data_file=st.file_uploader("Input your file here ",type="xlsx")
 flag=False
